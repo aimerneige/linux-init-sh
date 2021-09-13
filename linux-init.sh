@@ -43,6 +43,8 @@ sudo dnf install figlet -y
 sudo dnf install neofetch -y
 sudo dnf install cowsay -y
 
+sudo dnf intall htop -y
+
 sudo dnf install ranger -y
 
 sudo dnf install git -y
@@ -57,6 +59,7 @@ sudo dnf install gh -y
 
 sudo dnf install udiskie -y
 sudo dnf install compton -y
+sudo dnf install feh -y
 
 sudo dnf install nautilus -y
 
@@ -66,8 +69,10 @@ sudo dnf install gimp -y
 sudo dnf install blender -y
 sudo dnf install gnome-boxes -y
 sudo dnf install libreoffice -y
-
+sudo dnf install qbittorrent -y
 sudo dnf install mediawriter -y
+sudo dnf install calibre -y
+sudo dnf install ghex -y
 
 sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 
@@ -79,11 +84,16 @@ flatpak install flathub com.jetbrains.IntelliJ-IDEA-Ultimate
 flatpak install flathub com.google.AndroidStudio
 flatpak install flathub com.jetbrains.GoLand
 flatpak install flathub com.jetbrains.WebStorm
+flatpak install flathub com.jetbrains.CLion
 flatpak install flathub com.obsproject.Studio
 flatpak install flathub io.github.shiftey.Desktop
 flatpak install flathub io.typora.Typora
 flatpak install flathub com.discordapp.Discord
 flatpak install flathub org.telegram.desktop
+flatpak install flathub org.videolan.VLC
+flatpak install flathub io.mpv.Mpv
+flatpak install flathub info.smplayer.SMPlayer
+flatpak install flathub org.kde.kdenlive
 
 flatpak install flathub com.github.junrrein.PDFSlicer
 flatpak install flathub net.codeindustry.MasterPDFEditor
