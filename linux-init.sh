@@ -123,9 +123,12 @@ source $HOME/.zshrc
 
 rm -rf $HOME/.config/i3
 git clone https://github.com/aimerneige/i3.git $HOME/.config/i3
+
 rm -rf $HOME/.config/i3status
 git clone https://github.com/aimerneige/i3status.git $HOME/.config/i3status
+
 rm -rf $HOME/.config/kitty
 git clone https://github.com/aimerneige/kitty.git $HOME/.config/kitty
+
 rm -rf $HOME/.config/alacritty
 git clone https://github.com/aimerneige/alacritty.git $HOME/.config/alacritty
