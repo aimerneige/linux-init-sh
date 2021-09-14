@@ -20,6 +20,8 @@
 
 set -e
 
+sudo dnf group install "Fedora Workstation"
+
 sudo dnf install gcc -y
 sudo dnf install g++ -y
 sudo dnf install make -y
@@ -118,7 +120,7 @@ git clone https://github.com/aimerneige/zsh.git $HOME/.config/zsh
 
 ## todo
 
-echo "source \$HOME/.config/zsh/core_config.sh" >> $HOME/.zshrc
+# echo "source \$HOME/.config/zsh/core_config.sh" >> $HOME/.zshrc // SHOULD NOT CONTAIN SOMETHING CAN NOT RUN AGAIN
 cp $HOME/.config/zsh/proxy_config_example.sh $HOME/.config/zsh/proxy_config.sh
 
 source $HOME/.zshrc
