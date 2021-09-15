@@ -114,18 +114,8 @@ git config --global https.proxy socks5://127.0.0.1:1080
 sudo dnf install zsh -y
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
 sudo chsh -s $(which zsh)
-
-rm -rf $HOME/.config/zsh
-git clone https://github.com/aimerneige/zsh.git $HOME/.config/zsh
-
-## todo
-
-# echo "source \$HOME/.config/zsh/core_config.sh" >> $HOME/.zshrc // SHOULD NOT CONTAIN SOMETHING CAN NOT RUN AGAIN
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/aimerneige/zsh/master/install.sh)"
 cp $HOME/.config/zsh/proxy_config_example.sh $HOME/.config/zsh/proxy_config.sh
-
-source $HOME/.zshrc
-
-
 
 rm -rf $HOME/.config/i3
 git clone https://github.com/aimerneige/i3.git $HOME/.config/i3
