@@ -20,6 +20,8 @@
 
 set -e
 
+sudo dnf group install "Fedora Workstation"
+
 sudo dnf install gcc -y
 sudo dnf install g++ -y
 sudo dnf install make -y
@@ -74,6 +76,10 @@ sudo dnf install mediawriter -y
 sudo dnf install calibre -y
 sudo dnf install ghex -y
 
+sudo dnf install fedora-workstation-repositories
+sudo dnf config-manager --set-enabled google-chrome
+sudo dnf install google-chrome-stable -y
+
 sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 
 flatpak install flathub com.spotify.Client
@@ -114,7 +120,7 @@ git clone https://github.com/aimerneige/zsh.git $HOME/.config/zsh
 
 ## todo
 
-echo "source \$HOME/.config/zsh/core_config.sh" >> $HOME/.zshrc
+# echo "source \$HOME/.config/zsh/core_config.sh" >> $HOME/.zshrc // SHOULD NOT CONTAIN SOMETHING CAN NOT RUN AGAIN
 cp $HOME/.config/zsh/proxy_config_example.sh $HOME/.config/zsh/proxy_config.sh
 
 source $HOME/.zshrc
