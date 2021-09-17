@@ -34,14 +34,14 @@ sudo dnf install tree -y
 sudo dnf install figlet -y
 sudo dnf install neofetch -y
 sudo dnf install cowsay -y
-sudo dnf intall htop -y
+sudo dnf install htop -y
 sudo dnf install ranger -y
 sudo dnf install vim -y
 sudo dnf install neovim -y
 sudo dnf install aira2 -y
 # lazygit
 sudo dnf copr enable atim/lazygit -y
-sudo dnf install lazygit
+sudo dnf install lazygit -y
 # github-cli
 sudo dnf config-manager --add-repo https://cli.github.com/packages/rpm/gh-cli.repo
 sudo dnf install gh -y
