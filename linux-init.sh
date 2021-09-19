@@ -111,6 +111,9 @@ sudo dnf install steam -y
 sudo dnf install fedora-workstation-repositories
 sudo dnf config-manager --set-enabled google-chrome
 sudo dnf install google-chrome-stable -y
+# scrcpy
+sudo dnf copr enable zeno/scrcpy
+sudo dnf install scrcpy
 
 # # If you use i3
 # rm -rf $HOME/.config/i3
