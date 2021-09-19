@@ -111,9 +111,11 @@ sudo dnf install steam -y
 sudo dnf install fedora-workstation-repositories
 sudo dnf config-manager --set-enabled google-chrome
 sudo dnf install google-chrome-stable -y
-# scrcpy
-sudo dnf copr enable zeno/scrcpy
-sudo dnf install scrcpy
+
+# rpm fusion
+sudo dnf install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-34.noarch.rpm
+sudo dnf install https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-34.noarch.rpm
+
 
 # # If you use i3
 # rm -rf $HOME/.config/i3
