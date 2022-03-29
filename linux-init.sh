@@ -89,12 +89,12 @@ dnf install cool-retro-term -y
 dnf install gedit -y
 # rpm fusion
 sudo dnf install dnf-plugins-core -y
-sudo dnf install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm
-sudo dnf install https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
+sudo dnf install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm -y
+sudo dnf install https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm -y
 # Steam
 dnf install steam -y
 # Chrome
-dnf install fedora-workstation-repositories
+dnf install fedora-workstation-repositories -y
 dnf config-manager --set-enabled google-chrome
 dnf install google-chrome-stable -y
 # update again
