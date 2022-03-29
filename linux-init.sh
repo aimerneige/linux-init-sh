@@ -34,7 +34,6 @@ dnf update -y
 
 # Workstation Softwares
 dnf group install "Fedora Workstation" -y
-dnf group install "GNOME Desktop Environment" -y
 
 # Terminal Tools
 dnf install wget -y
