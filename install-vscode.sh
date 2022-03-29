@@ -1,3 +1,5 @@
+set -e
+
 echo "====== Start Install Microsoft Visual Studio Code ======"
 
 sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc

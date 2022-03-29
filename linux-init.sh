@@ -20,150 +20,91 @@
 
 set -e
 
+if [[ $EUID != 0 ]]; then
+    echo "You must run this script with `sudo` or use `sudo -s`."
+    exit 1
+fi
+
 # Proxy Settings
-export all_proxy=socks5://127.0.0.1:1080
-export no_proxy="localhost, 127.0.0.1, *.baidu.com"
+# export all_proxy=socks5://127.0.0.1:1080
+# export no_proxy="localhost, 127.0.0.1, *.baidu.com"
+
+# Update
+dnf update -y
 
 # Workstation Softwares
-sudo dnf group install "Fedora Workstation"
+dnf group install "Fedora Workstation"
+dnf group install "GNOME Desktop Environment"
 
 # Terminal Tools
-sudo dnf install wget -y
-sudo dnf install curl -y
-sudo dnf install tree -y
-sudo dnf install figlet -y
-sudo dnf install neofetch -y
-sudo dnf install cowsay -y
-sudo dnf install htop -y
-sudo dnf install ranger -y
-sudo dnf install vim -y
-sudo dnf install neovim -y
-sudo dnf install aira2 -y
+dnf install wget -y
+dnf install curl -y
+dnf install tree -y
+dnf install figlet -y
+dnf install neofetch -y
+dnf install cowsay -y
+dnf install fortune -y
+dnf install htop -y
+dnf install bpytop -y
+dnf install ranger -y
+dnf install vim -y
+dnf install neovim -y
+dnf install aira2 -y
+dnf install ncdu -y
 # lazygit
-sudo dnf copr enable atim/lazygit -y
-sudo dnf install lazygit -y
+dnf copr enable atim/lazygit -y
+dnf install lazygit -y
 # github-cli
-sudo dnf config-manager --add-repo https://cli.github.com/packages/rpm/gh-cli.repo
-sudo dnf install gh -y
+dnf config-manager --add-repo https://cli.github.com/packages/rpm/gh-cli.repo
+dnf install gh -y
+
 # git & config
-sudo dnf install git -y
+dnf install git -y
 git config --global user.name AimerNeige
 git config --global user.email aimer.neige.soft@gmail.com
 # git proxy
-git config --global http.proxy socks5://127.0.0.1:1080
-git config --global https.proxy socks5://127.0.0.1:1080
+# git config --global http.proxy socks5://127.0.0.1:1080
+# git config --global https.proxy socks5://127.0.0.1:1080
+
 # cheat.sh
-curl https://cht.sh/:cht.sh | sudo tee /usr/local/bin/cht.sh
+curl https://cht.sh/:cht.sh | tee /usr/local/bin/cht.sh
 chmod +x /usr/local/bin/cht.sh
 
 # install & config zsh
-sudo dnf install zsh -y
+dnf install zsh -y
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
 chsh -s $(which zsh)
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/aimerneige/zsh/master/install.sh)"
-cp $HOME/.config/zsh/proxy_config_example.sh $HOME/.config/zsh/proxy_config.sh
-git clone https://github.com/spaceship-prompt/spaceship-prompt.git "$ZSH_CUSTOM/themes/spaceship-prompt" --depth=1
-ln -s "$ZSH_CUSTOM/themes/spaceship-prompt/spaceship.zsh-theme" "$ZSH_CUSTOM/themes/spaceship.zsh-theme"
+git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+dnf install starship -y
 
-# Develop Env
-sudo dnf install gcc -y
-sudo dnf install g++ -y
-sudo dnf install python -y
-sudo dnf install python3 -y
-sudo dnf install make -y
-sudo dnf install cmake -y
-sudo dnf install java-latest-openjdk.x86_64 -y
-# golang
-aria2c -s16 -x16 -k1M -d $HOME/Downloads/InitScriptTemp https://golang.org/dl/go1.17.1.linux-amd64.tar.gz
-sudo rm -rf /usr/local/go
-sudo tar -C /usr/local -xzf $HOME/Downloads/InitScriptTemp/go1.17.1.linux-amd64.tar.gz
+dnf install gcc -y
+dnf install g++ -y
+dnf install make -y
+dnf install cmake -y
 
 # Kitty
-sudo dnf install kitty -y
+dnf install kitty -y
 rm -rf $HOME/.config/kitty
 git clone https://github.com/aimerneige/kitty.git $HOME/.config/kitty
 # Alacritty
-sudo dnf install alacritty -y
+dnf install alacritty -y
 rm -rf $HOME/.config/alacritty
 git clone https://github.com/aimerneige/alacritty.git $HOME/.config/alacritty
+# Cool Retro Term
+dnf install cool-retro-term -y
 
 # Software
-sudo dnf install gedit -y
-sudo dnf install flameshot -y
-sudo dnf install remmina -y
-sudo dnf install okular -y
-sudo dnf install krita -y
-sudo dnf install gimp -y
-sudo dnf install blender -y
-sudo dnf install gnome-boxes -y
-sudo dnf install gnome-connections -y
-sudo dnf install gnome-sound-recorder -y
-sudo dnf install apostrophe -y
-sudo dnf install libreoffice -y
-sudo dnf install qbittorrent -y
-sudo dnf install mediawriter -y
-sudo dnf install calibre -y
-sudo dnf install ghex -y
+dnf install gedit -y
 # Steam
-sudo dnf install https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-34.noarch.rpm
-sudo dnf install steam -y
+dnf install https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-34.noarch.rpm
+dnf install steam -y
 # Chrome
-sudo dnf install fedora-workstation-repositories
-sudo dnf config-manager --set-enabled google-chrome
-sudo dnf install google-chrome-stable -y
-
+dnf install fedora-workstation-repositories
+dnf config-manager --set-enabled google-chrome
+dnf install google-chrome-stable -y
 # rpm fusion
-sudo dnf install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-34.noarch.rpm
-sudo dnf install https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-34.noarch.rpm
-
-
-# # If you use i3
-# rm -rf $HOME/.config/i3
-# git clone https://github.com/aimerneige/i3.git $HOME/.config/i3
-# rm -rf $HOME/.config/i3status
-# git clone https://github.com/aimerneige/i3status.git $HOME/.config/i3status
-# # Software for i3
-# sudo dnf install udiskie -y
-# sudo dnf install compton -y
-# sudo dnf install feh -y
-# sudo dnf install nautilus -y
-
-# Flathub Softwares
-sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
-
-flatpak install flathub com.spotify.Client -y
-flatpak install flathub net.cozic.joplin_desktop -y
-flatpak install flathub com.github.mdh34.quickdocs -y
-flatpak install flathub com.getpostman.Postman -y
-flatpak install flathub com.obsproject.Studio -y
-flatpak install flathub io.github.shiftey.Desktop -y
-flatpak install flathub io.typora.Typora -y
-flatpak install flathub com.discordapp.Discord -y
-flatpak install flathub org.telegram.desktop -y
-flatpak install flathub org.videolan.VLC -y
-flatpak install flathub io.mpv.Mpv -y
-flatpak install flathub info.smplayer.SMPlayer -y
-flatpak install flathub org.kde.kdenlive -y
-flatpak install flathub com.belmoussaoui.Decoder -y
-flatpak install flathub com.diy_fever.DIYLayoutCreator -y
-flatpak install flathub com.github.junrrein.PDFSlicer -y
-flatpak install flathub net.codeindustry.MasterPDFEditor -y
-flatpak install flathub com.github.alecaddd.sequeler -y
-flatpak install flathub io.dbeaver.DBeaverCommunity -y
-flatpak install flathub com.github.gi_lom.dialect -y
-flatpak install flathub com.github.johnfactotum.Foliate -y
-flatpak install flathub com.github.robertsanseries.ciano -y
-flatpak install flathub com.leinardi.gst -y
-flatpak install flathub io.gitlab.librewolf-community -y
-flatpak install flathub net.meijn.onvifviewer -y
-flatpak install flathub de.haeckerfelix.Shortwave -y
-flatpak install flathub ch.openboard.OpenBoard -y
-flatpak install flathub io.github.hakuneko.HakuNeko -y
-flatpak install flathub org.shotcut.Shotcut -y
-
-# # download them with jetbrains tool box instead
-# flatpak install flathub com.google.AndroidStudio -y
-# flatpak install flathub com.jetbrains.IntelliJ-IDEA-Ultimate -y
-# flatpak install flathub com.jetbrains.GoLand -y
-# flatpak install flathub com.jetbrains.WebStorm -y
-# flatpak install flathub com.jetbrains.CLion -y
+dnf install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-34.noarch.rpm
+dnf install https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-34.noarch.rpm
+# update again
+dnf update -y

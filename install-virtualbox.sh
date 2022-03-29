@@ -1,3 +1,5 @@
+set -e
+
 echo "====== Start Install Oracle VM VirtualBox ======"
 
 sudo rpm --import https://www.virtualbox.org/download/oracle_vbox.asc
