@@ -48,6 +48,8 @@ dnf install alacritty -y
 dnf install cool-retro-term -y
 dnf install gedit -y
 dnf install gnome-tweak-tool -y
+dnf install feh -y
+dnf install variety -y
 # rpm fusion
 dnf install dnf-plugins-core -y
 dnf install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm -y
