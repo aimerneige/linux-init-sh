@@ -49,6 +49,7 @@ dnf install vim -y
 dnf install neovim -y
 dnf install aria2 -y
 dnf install ncdu -y
+dnf install util-linux-user -y
 # lazygit
 dnf copr enable atim/lazygit -y
 dnf install lazygit -y
