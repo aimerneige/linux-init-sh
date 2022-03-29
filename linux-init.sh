@@ -47,7 +47,7 @@ dnf install bpytop -y
 dnf install ranger -y
 dnf install vim -y
 dnf install neovim -y
-dnf install aira2 -y
+dnf install aria2 -y
 dnf install ncdu -y
 # lazygit
 dnf copr enable atim/lazygit -y
