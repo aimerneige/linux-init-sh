@@ -21,7 +21,7 @@
 set -e
 
 if [[ $EUID != 0 ]]; then
-    echo "You must run this script with `sudo` or use `sudo -s`."
+    echo "You must run this script with `sudo`."
     exit 1
 fi
 
