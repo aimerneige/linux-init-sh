@@ -42,7 +42,6 @@ dnf install tree -y
 dnf install figlet -y
 dnf install neofetch -y
 dnf install cowsay -y
-dnf install fortune -y
 dnf install htop -y
 dnf install bpytop -y
 dnf install ranger -y
