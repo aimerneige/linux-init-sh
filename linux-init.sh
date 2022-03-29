@@ -69,14 +69,6 @@ git config --global user.email aimer.neige.soft@gmail.com
 curl https://cht.sh/:cht.sh | tee /usr/local/bin/cht.sh
 chmod +x /usr/local/bin/cht.sh
 
-# install & config zsh
-dnf install zsh -y
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
-chsh -s $(which zsh)
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/aimerneige/zsh/master/install.sh)"
-git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
-dnf install starship -y
-
 dnf install gcc -y
 dnf install g++ -y
 dnf install make -y
