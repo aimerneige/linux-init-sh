@@ -42,6 +42,8 @@ dnf install gcc -y
 dnf install g++ -y
 dnf install make -y
 dnf install cmake -y
+# Rime
+dnf install ibus-rime -y
 # Software
 dnf install kitty -y
 dnf install alacritty -y
@@ -50,6 +52,8 @@ dnf install gedit -y
 dnf install gnome-tweak-tool -y
 dnf install feh -y
 dnf install variety -y
+# inkdrop
+wget https://api.inkdrop.app/download/linux/rpm -O /tmp/inkdrop.rpm && sudo yum install /tmp/inkdrop.rpm && rm /tmp/inkdrop.rpm
 # rpm fusion
 dnf install dnf-plugins-core -y
 dnf install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm -y
