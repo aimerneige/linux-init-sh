@@ -60,6 +60,11 @@ rm /tmp/inkdrop.rpm
 wget https://updates.getmailspring.com/download?platform=linuxRpm -O /tmp/MailSpring.rpm
 yum install /tmp/MailSpring.rpm
 rm /tmp/MailSpring.rpm
+# sublime
+rpm -v --import https://download.sublimetext.com/sublimehq-rpm-pub.gpg
+dnf config-manager --add-repo https://download.sublimetext.com/rpm/stable/x86_64/sublime-text.repo
+dnf update
+dnf install sublime-text
 # rpm fusion
 dnf install dnf-plugins-core -y
 dnf install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm -y
