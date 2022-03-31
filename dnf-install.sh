@@ -51,6 +51,7 @@ dnf install alacritty -y
 dnf install cool-retro-term -y
 dnf install gedit -y
 dnf install gnome-tweak-tool -y
+dnf install gnome-extensions-app -y
 dnf install feh -y
 dnf install variety -y
 # inkdrop
