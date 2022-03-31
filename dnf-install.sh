@@ -5,6 +5,10 @@ if [[ $EUID != 0 ]]; then
     exit 1
 fi
 
+# rpm fusion
+dnf install dnf-plugins-core -y
+dnf install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm -y
+dnf install https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm -y
 # Update
 dnf update -y
 # Workstation Softwares
@@ -52,6 +56,9 @@ dnf install cool-retro-term -y
 dnf install gedit -y
 dnf install gnome-tweak-tool -y
 dnf install gnome-extensions-app -y
+dnf install gnome-shell-extension-pop-shell -y
+dnf install gnome-shell-theme-yaru -y
+dnf install gnome-shell-theme-flat-remix -y
 dnf install feh -y
 dnf install variety -y
 # inkdrop
@@ -72,10 +79,6 @@ dnf install sublime-merge
 rpm --import https://packagecloud.io/AtomEditor/atom/gpgkey
 sh -c 'echo -e "[Atom]\nname=Atom Editor\nbaseurl=https://packagecloud.io/AtomEditor/atom/el/7/\$basearch\nenabled=1\ngpgcheck=0\nrepo_gpgcheck=1\ngpgkey=https://packagecloud.io/AtomEditor/atom/gpgkey" > /etc/yum.repos.d/atom.repo'
 dnf install atom
-# rpm fusion
-dnf install dnf-plugins-core -y
-dnf install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm -y
-dnf install https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm -y
 # Steam
 dnf install steam -y
 # Chrome
