@@ -54,6 +54,7 @@ dnf install libxml2 -y
 dnf install ibus-rime -y
 # Software
 dnf isntall dconf -y
+dnf install sqlitebrowser -y
 dnf install kitty -y
 dnf install alacritty -y
 dnf install cool-retro-term -y
