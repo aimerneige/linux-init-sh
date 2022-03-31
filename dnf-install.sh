@@ -46,6 +46,10 @@ dnf install gcc -y
 dnf install g++ -y
 dnf install make -y
 dnf install cmake -y
+# Lib
+dnf install sassc -y
+dnf install glib2-devel -y
+dnf install libxml2 -y
 # Rime
 dnf install ibus-rime -y
 # Software
