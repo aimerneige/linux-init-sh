@@ -31,7 +31,7 @@ rm /tmp/WhiteSur-icon-theme -rf
 echo "Start clone gruvbox-material-gtk"
 git clone https://github.com/TheGreatMcPain/gruvbox-material-gtk /tmp/gruvbox-material-gtk
 echo "Start install gruvbox-material-gtk"
-sudo cp /tmp/gruvbox-material-gtk/themes/* /usr/share/themes -y
-sudo cp /tmp/gruvbox-material-gtk/icons/* /usr/share/icons -y
+sudo cp /tmp/gruvbox-material-gtk/themes/* /usr/share/themes -r
+sudo cp /tmp/gruvbox-material-gtk/icons/* /usr/share/icons -r
 echo "Remove temp file"
 rm /tmp/gruvbox-material-gtk -rf
