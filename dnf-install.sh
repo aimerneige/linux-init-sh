@@ -62,7 +62,6 @@ dnf install gnome-tweak-tool -y
 dnf install gnome-extensions-app -y
 dnf install gnome-shell-extension-pop-shell -y
 dnf install gnome-shell-theme-yaru -y
-dnf install gnome-shell-theme-flat-remix -y
 dnf install feh -y
 dnf install variety -y
 # inkdrop
