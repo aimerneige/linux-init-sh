@@ -50,6 +50,8 @@ dnf install cmake -y
 dnf install sassc -y
 dnf install glib2-devel -y
 dnf install libxml2 -y
+dnf install gtk3-devel -y
+dnf install webkit2gtk3-devel -y
 # Rime
 dnf install ibus-rime -y
 # Software
