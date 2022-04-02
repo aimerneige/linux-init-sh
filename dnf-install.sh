@@ -69,24 +69,25 @@ dnf install gnome-shell-extension-pop-shell -y
 dnf install gnome-shell-theme-yaru -y
 dnf install feh -y
 dnf install variety -y
+dnf install simplescreenrecorder -y
 # inkdrop
 wget https://api.inkdrop.app/download/linux/rpm -O /tmp/inkdrop.rpm
-yum install /tmp/inkdrop.rpm
+yum install /tmp/inkdrop.rpm -y
 rm /tmp/inkdrop.rpm
 # mailspring
 wget https://updates.getmailspring.com/download?platform=linuxRpm -O /tmp/MailSpring.rpm
-yum install /tmp/MailSpring.rpm
+yum install /tmp/MailSpring.rpm -y
 rm /tmp/MailSpring.rpm
 # sublime
 rpm -v --import https://download.sublimetext.com/sublimehq-rpm-pub.gpg
 dnf config-manager --add-repo https://download.sublimetext.com/rpm/stable/x86_64/sublime-text.repo
 dnf update
-dnf install sublime-text
-dnf install sublime-merge
+dnf install sublime-text -y
+dnf install sublime-merge -y
 # atom
 rpm --import https://packagecloud.io/AtomEditor/atom/gpgkey
 sh -c 'echo -e "[Atom]\nname=Atom Editor\nbaseurl=https://packagecloud.io/AtomEditor/atom/el/7/\$basearch\nenabled=1\ngpgcheck=0\nrepo_gpgcheck=1\ngpgkey=https://packagecloud.io/AtomEditor/atom/gpgkey" > /etc/yum.repos.d/atom.repo'
-dnf install atom
+dnf install atom -y
 # Steam
 dnf install steam -y
 # Chrome
