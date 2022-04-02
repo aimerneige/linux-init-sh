@@ -54,6 +54,8 @@ dnf install gtk3-devel -y
 dnf install webkit2gtk3-devel -y
 # Rime
 dnf install ibus-rime -y
+# Mozc
+dnf install ibus-mozc -y
 # Software
 dnf isntall dconf -y
 dnf install sqlitebrowser -y
