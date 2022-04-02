@@ -136,4 +136,5 @@ flatpak install flathub org.gnome.Boxes -y
 flatpak install flathub org.gnome.SoundRecorder -y
 # GHex
 flatpak install flathub org.gnome.GHex -y
-
+# WeMeet
+flatpak install flathub com.tencent.wemeet -y
