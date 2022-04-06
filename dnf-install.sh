@@ -57,7 +57,7 @@ dnf install ibus-rime -y
 # Mozc
 dnf install ibus-mozc -y
 # Software
-dnf isntall dconf -y
+dnf install dconf -y
 dnf install sqlitebrowser -y
 dnf install kitty -y
 dnf install alacritty -y
