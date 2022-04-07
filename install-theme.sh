@@ -24,7 +24,7 @@ rm /tmp/WhiteSur-gtk-theme -rf
 echo "Start clone WhiteSur-icon-theme"
 git clone https://github.com/vinceliuice/WhiteSur-icon-theme.git /tmp/WhiteSur-icon-theme
 echo "Start install WhiteSur-icon-theme"
-/tmp/WhiteSur-icon-theme/install.sh
+sudo /tmp/WhiteSur-icon-theme/install.sh
 echo "Remove temp file"
 rm /tmp/WhiteSur-icon-theme -rf
 
@@ -35,3 +35,18 @@ sudo cp /tmp/gruvbox-material-gtk/themes/* /usr/share/themes -r
 sudo cp /tmp/gruvbox-material-gtk/icons/* /usr/share/icons -r
 echo "Remove temp file"
 rm /tmp/gruvbox-material-gtk -rf
+
+echo "Start clone capitaine-cursors"
+git clone https://github.com/keeferrourke/capitaine-cursors.git /tmp/capitaine-cursors
+echo "Start install capitaine-cursors"
+sudo cp /tmp/capitaine-cursors/ /usr/share/icons -r
+echo "Remove temp file"
+rm /tmp/capitaine-cursors -rf
+
+# echo "Start clone McMojave-cursors"
+# git clone https://github.com/vinceliuice/McMojave-cursors.git /tmp/McMojave-cursors
+# echo "Start install McMojave-cursors"
+# cd /tmp/McMojave-cursors
+# sudo /tmp/McMojave-cursors/install.sh
+# echo "Remove temp file"
+# rm /tmp/McMojave-cursors -rf
