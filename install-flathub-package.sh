@@ -139,4 +139,4 @@ flatpak install flathub org.gnome.GHex -y
 # WeMeet
 flatpak install flathub com.tencent.wemeet -y
 # Ferdi
-flatpak install flathub com.getferdi.Ferdi
+flatpak install flathub com.getferdi.Ferdi -y
