@@ -39,7 +39,7 @@ rm /tmp/gruvbox-material-gtk -rf
 echo "Start clone capitaine-cursors"
 git clone https://github.com/keeferrourke/capitaine-cursors.git /tmp/capitaine-cursors
 echo "Start install capitaine-cursors"
-sudo cp /tmp/capitaine-cursors/ /usr/share/icons -r
+sudo cp /tmp/capitaine-cursors/src/ /usr/share/icons/capitaine-cursors -r
 echo "Remove temp file"
 rm /tmp/capitaine-cursors -rf
 
